@@ -2,7 +2,7 @@ name: Auto
 
 on:
   schedule:
-    - cron: "20 0 * * *" # 北京时间上午08:20=UTC时间+8小时
+    - cron: "20 * * * *" # 北京时间上午08:20=UTC时间+8小时
   workflow_dispatch:
 
 env:
@@ -25,9 +25,13 @@ jobs:
   DifyWorkflow:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Current Time
+        run: echo "Current time:$(date)"
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - name: Run Project
         run: |
           yarn
           yarn workflowDify
+
+        
