@@ -1,8 +1,8 @@
 name: Auto
 
 on:
-  schedule:
-    - cron: "30 0 * * *" # 北京时间上午08:30=UTC时间+8小时
+ # schedule:
+ #  - cron: "30 0 * * *" # 北京时间上午08:30=UTC时间+8小时
   workflow_dispatch:
 
 env:
